@@ -40,14 +40,7 @@ class AresFinder
 
     private function getFromUrl($url)
     {
-        try {
-            $rawData = file_get_contents($url);
-        } catch (\Exception $e) {
-            return [
-                'msg' => 'Fetch from ARES failed'
-            ];
-        }
-
+        $rawData = file_get_contents($url);
         return $this->parser->parse($rawData);
     }
 }
