@@ -1,0 +1,13 @@
+{
+    "name": "pixiucz/ares-finder",
+    "type": "library",
+    "require": {
+        "nathanmac/parser": "4.3"
+    },
+    "authors": [
+        {
+            "name": "Pixiu.cz",
+            "email": "info@pixiu.cz"
+        }
+    ]
+}
