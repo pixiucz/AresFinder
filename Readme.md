@@ -4,7 +4,7 @@ $results = $AresFinder->findByName("Pixiu");
 $results2 = $AresFinder->findByIco("05307503");
 ```
 ### Response format
-- Natively returns PHP array, after json encoding looks like this: 
+- Returns Laravel Collection in case of multiple responses or single Collection object in format: 
 ```json
     {
         "Name": "Pixiu s.r.o.",
