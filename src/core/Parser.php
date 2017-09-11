@@ -26,19 +26,19 @@ class Parser
 
         $formatted = array_map(function($record) {
             return [
-                'Name' => array_get($record, 'are:Obchodni_firma'),
-                'Origin' => array_get($record, 'are:Datum_vzniku'),
-                'Validity' => array_get($record, 'are:Datum_platnosti'),
-                'Legal form of bussiness' => FOM::czechForms[array_get($record, 'are:Pravni_forma.dtt:Kod_PF', 1)],
-                'ICO' => array_get($record, 'are:ICO'),
-                'Address' => [
-                    'State code' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Kod_statu'),
-                    'District' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Nazev_okresu'),
-                    'City' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Nazev_obce'),
-                    'Street' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Nazev_ulice'),
-                    'House number' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Cislo_domovni'),
-                    'Orientation number' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Cislo_orientacni'),
-                    'Zip' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:PSC')
+                'name' => array_get($record, 'are:Obchodni_firma'),
+                'origin' => array_get($record, 'are:Datum_vzniku'),
+                'validity' => array_get($record, 'are:Datum_platnosti'),
+                'form_of_bussiness' => FOM::czechForms[array_get($record, 'are:Pravni_forma.dtt:Kod_PF', 1)],
+                'ico' => array_get($record, 'are:ICO'),
+                'address' => [
+                    'state_code' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Kod_statu'),
+                    'district' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Nazev_okresu'),
+                    'city' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Nazev_obce'),
+                    'street' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Nazev_ulice'),
+                    'house_number' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Cislo_domovni'),
+                    'orientation_number' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:Cislo_orientacni'),
+                    'zip' => array_get($record, 'are:Identifikace.are:Adresa_ARES.dtt:PSC')
                 ]
             ];
         }, $records);
