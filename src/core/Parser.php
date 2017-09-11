@@ -43,7 +43,6 @@ class Parser
             ];
         }, $records);
 
-        if ($numberOfRecords === 1) return collect($formatted[0]);
         return collect($formatted);
     }
 
