@@ -9,5 +9,17 @@
             "name": "Pixiu.cz",
             "email": "info@pixiu.cz"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": {
+            "Pixiucz\\Invoices\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Pixiucz\\AresFinder\\AresFinderServiceProvider"
+            ]
+        }
+    },
 }
