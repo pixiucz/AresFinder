@@ -15,9 +15,10 @@ class Parser
     public function parse($rawData)
     {
         $array = $this->xmlParser->xml($rawData);
+        $numberOfRecords = (int) $array['are:Odpoved']['are:Pocet_zaznamu'];
 
-        if ($array['are:Odpoved']['are:Pocet_zaznamu'] == 0) { return []; }
-        if ($array['are:Odpoved']['are:Pocet_zaznamu'] == 1) {
+        if ($numberOfRecords === 0) { return collect([]); }
+        if ($numberOfRecords === 1) {
             $records[] = array_get($array, 'are:Odpoved.are:Zaznam');
         } else {
             $records = array_get($array, 'are:Odpoved.are:Zaznam');
@@ -42,7 +43,8 @@ class Parser
             ];
         }, $records);
 
-        return $formatted;
+        if ($numberOfRecords === 1) return collect($formatted[0]);
+        return collect($formatted);
     }
 
 }
