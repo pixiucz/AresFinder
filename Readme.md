@@ -20,6 +20,7 @@ $results2 = $AresFinder->findByIco("05307503");
 ### Response format
 - Returns Laravel **Collection** (even in case of single response) 
 ```json
+[
     {
         "Name": "Pixiu s.r.o.",
         "Origin": "2016-08-22",
@@ -36,4 +37,5 @@ $results2 = $AresFinder->findByIco("05307503");
             "Zip": "60200"
         }
     }
+]
 ```
