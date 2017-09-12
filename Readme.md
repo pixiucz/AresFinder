@@ -1,10 +1,24 @@
 # Pixiucz\AresFinder
+### Register in October CMS
+- `composer require pixiucz/ares-finder`
+- Add this to your `Plugin.php`
 ```php
+public function boot()
+{
+    ...
+    $this->app->register(\Pixiucz\AresFinder\AresFinderServiceProvider::class)
+    ...
+}
+```
+### Usage
+```php
+// Can be injected through constructor or by using service provider
+$AresFinder = app('AresFinder');
 $results = $AresFinder->findByName("Pixiu");
 $results2 = $AresFinder->findByIco("05307503");
 ```
 ### Response format
-- Returns Laravel Collection in case of multiple responses or single Collection object in format: 
+- Returns Laravel **Collection** (even in case of single response) 
 ```json
     {
         "Name": "Pixiu s.r.o.",
