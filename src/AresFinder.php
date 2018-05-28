@@ -26,7 +26,7 @@ class AresFinder
 
     public function findByName($name)
     {
-        $url = self::ARES . 'Obchodni_firma=' . rawurlencode($name);
+        $url = self::ARES . 'Obchodni_firma=' . rawurlencode($name) . '&max_pocet=50';
         return $this->getFromUrl($url);
     }
 
