@@ -17,7 +17,7 @@ class Parser
         $array = $this->xmlParser->xml($rawData);
         $numberOfRecords = (int) $array['are:Odpoved']['are:Pocet_zaznamu'];
 
-        if ($numberOfRecords === 0) { return collect([]); }
+        if ($numberOfRecords <= 0) { return collect([]); }
         if ($numberOfRecords === 1) {
             $records[] = array_get($array, 'are:Odpoved.are:Zaznam');
         } else {
